@@ -195,7 +195,6 @@ public class Game
             currentRoom.setPassou(true);
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
-            currentRoom.getSubPrints();
         }
     }
 
