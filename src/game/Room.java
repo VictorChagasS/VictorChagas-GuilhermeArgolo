@@ -20,114 +20,73 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
-    private String estado;
-    private boolean passed = false;
-    private static int allMatesinGame;
+    private String state;
+    private boolean passed;
+    
+    
+    
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description, String estado)
+
+    Item item = new Item();
+    
+    public Room(String description, String state)
     {
         this.description = description;
-        this.estado = estado;
+        this.state = state;
+        item = new Item(state);
         exits = new HashMap<>();
-
-        if (checkMate())
-            allMatesinGame++;
     }
 
-    public int getAllMates() {
-        return allMatesinGame;
+
+    public Room(String description) {
+        this.state = null;
+        this.description = description;
+        exits = new HashMap<>(); 
     }
 
-    public boolean checkMate() {
-        if (estado == "mate")
-            return true;
-        else
-            return false;
+    public void setPassou(boolean passed) {
+        this.passed = passed;    
     }
 
-    public boolean checkOnePiece() {
-        if (estado == "end")
-            return true;
-        else
-            return false;
-    }
-
-    public boolean checkEndGame() {
-        if (checkOnePiece() && getAllMates() == 0)
-            return true;
-        else   
-            return false;
-    }
-
-    public void endGame() {
-       if (checkEndGame())
-            System.out.println("Você encontrou o maior tesouro do mundo. Fim de jogo.");
-        
-        warningMates();
-    }
-
-    public void jaPassou() {
+    public void alreadyPassed() {
         if (passed)
             System.out.println("Você já passou por aqui...");
-   
     } 
+
+    public boolean getPassed() {
+        return passed;
+    }
+
+    public String getState(){
+       return state;
+    }
 
     public void matesQtd() {
         String pluralMate = "s";
         String pluralVerb = "m";
 
-        if (getAllMates() == 1) {
+        if (item.getAllMates() == 1) {
             pluralMate="";
             pluralVerb = "";}
 
-        if (getAllMates() > 0)
-            System.out.println("Falta" + pluralVerb + " " + allMatesinGame + " companheiro"+ pluralMate + " para completar a jornada");
+        if (item.getAllMates() > 0)
+            System.out.println("Falta" + pluralVerb + " " + item.getAllMates() + " companheiro"+ pluralMate + " para completar a jornada");
         else
             System.out.println("Não faltam companheiros");
     }
 
-    public void villainPrint() {
-        if (foundVillain())
-            System.out.println("Infelizmente você perdeu mas mantenha sua determinação e tente novamente");  
-    }
-    public void warningMates()  {
-        if (checkOnePiece() && !(getAllMates() == 0)) {
-            System.out.println("Um verdadeiro rei dos piratas precisa de todos seus amigos para concluir o objetivo final, certifique-se disto");
-            matesQtd();}
-    }
-
-    public void setPassou(boolean passou) {
-        this.passed = passou;    
-    }
-
-    public void mateFound() {
-        if (checkMate()) {
-           if (!passed)
-            allMatesinGame--;
-            matesQtd();
-        }
-    }
-
-
-    public boolean foundVillain() {
-        if(checkVillian())
-           return true;
-        else
-            return false;
-    }
-
+    
 
     public void getSubPrints() {
-        jaPassou();
-        mateFound();
-        villainPrint();
-        endGame();
+        alreadyPassed();
+      
     }
+
     /**
      * Define an exit from this room.
      * @param direction The direction of the exit.
@@ -136,6 +95,7 @@ public class Room
     public void setExit(String direction, Room neighbor) 
     {
         exits.put(direction, neighbor);
+        
     }
 
     /**
@@ -147,12 +107,6 @@ public class Room
         return description;
     }
 
-    public boolean checkVillian() {
-        if (estado == "villain")
-            return true;
-        else
-            return false;
-    }
     /**
      * Return a description of the room in the form:
      *     You are in the kitchen.
@@ -172,12 +126,12 @@ public class Room
     private String getExitString()
     {
         String returnString = "";
-        if (!checkVillian()) {
+       
         returnString = "\nExits:";
         Set<String> keys = exits.keySet();
         for(String exit : keys) {
             returnString += " " + exit;
-        }}
+        }
         return returnString;
 
 }
