@@ -66,26 +66,7 @@ public class Room
        return state;
     }
 
-    public void matesQtd() {
-        String pluralMate = "s";
-        String pluralVerb = "m";
 
-        if (item.getAllMates() == 1) {
-            pluralMate="";
-            pluralVerb = "";}
-
-        if (item.getAllMates() > 0)
-            System.out.println("Falta" + pluralVerb + " " + item.getAllMates() + " companheiro"+ pluralMate + " para completar a jornada");
-        else
-            System.out.println("Não faltam companheiros");
-    }
-
-    
-
-    public void getSubPrints() {
-        alreadyPassed();
-      
-    }
 
     /**
      * Define an exit from this room.
@@ -115,7 +96,7 @@ public class Room
      */
     public String getLongDescription()
     {
-        return description + getExitString() + "\n";
+        return description + getExitString();
     }
 
     /**

@@ -101,7 +101,7 @@ public class Game
         // execute them until the game is over.
                 
         boolean finished = false;
-        while (! finished && !Item.getFinished()) {
+        while (!finished && !Item.getFinished()) {
             Command command = parser.getCommand();
             finished = processCommand(command);
             Item.checkState(currentRoom.getState(),currentRoom.getPassed());
@@ -163,11 +163,8 @@ public class Game
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
-        System.out.println();
-        System.out.println("Your command words are:");
-        parser.showCommands();
+        System.out.println("Ache seus companheiros e conquiste o tesouro");
+        System.out.println("Tudo que há é um navio e sua determinação");
     }
 
     /** 
@@ -195,6 +192,7 @@ public class Game
             currentRoom.setPassou(true);
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
+            currentRoom.alreadyPassed();
         }
     }
 
