@@ -97,7 +97,7 @@ public class Room
     }
     public void warningMates()  {
         if (checkOnePiece() && !(getAllMates() == 0)) {
-            System.out.println("Um verdadeiro rei dos piratas precisa de todos seus amigos para concluir o objetivo final, cerifique-se disto");
+            System.out.println("Um verdadeiro rei dos piratas precisa de todos seus amigos para concluir o objetivo final, certifique-se disto");
             matesQtd();}
     }
 
