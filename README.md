@@ -11,6 +11,11 @@ Neste jogo sua missão é encontrar sua tripulação para ir em busca do maior t
 ## Sobre o jogo:
 Neste jogo, há três tipos de locais: um onde você acha seus companheiros; um em que você se depara com vilões e é game over; e locais intermediários, servindo como lar para seus futuros tripulantes.
 
+### Comandos:
+go + direção(norte,sul,leste,oeste);<br />
+help;<br />
+quit;
+
 
 
 ## Mapa do jogo:
