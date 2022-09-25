@@ -19,6 +19,6 @@ quit;
 
 
 ## Mapa do jogo:
-![enter image description here](https://cdn.discordapp.com/attachments/892139028583964753/1023369947033903205/onepiece.jpg)
+![enter image description here](https://media.discordapp.net/attachments/998218247939817482/1023386240076230746/onepiece1.jpg)
 
 
