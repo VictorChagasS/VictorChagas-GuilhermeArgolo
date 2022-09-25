@@ -5,7 +5,7 @@
 
 
 ## Objetivo
-Neste jogo sua missão é encontrar sua tripulação para ir em busca do maior tesouro do mundo. Porém, no caminho podem haver vilões, navegue com cuidado. Lembrando que só é possível chegar ao tesouro se encontrar todos os tripulantes.
+Neste jogo sua missão é encontrar sua tripulação para ir em busca do maior tesouro do mundo (O lendário One piece). Porém, no caminho podem haver vilões, navegue com cuidado. Lembrando que só é possível chegar ao tesouro se encontrar todos os tripulantes.
 
 
 ## Sobre o jogo:
